@@ -1,0 +1,172 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    min-height: 100vh;
+    background: url(16352150_v870-tang-35.jpg) no-repeat center center;
+    background-size: cover;
+ }
+ 
+ h1 {
+    color: #fafdff;
+ }
+ 
+ h2 {
+    color: #1a1a1a;
+ }
+ 
+ 
+ .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+ }
+ .sidebar-header {
+    text-align: center;
+    padding-bottom: 15px;
+ }
+
+ /* Sidebar */
+ .sidebar {
+    background-color: #34bbed;
+    width: 260px;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    bottom: 0px; /* Ajustado para el pie de página */
+    left: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .sidebar-header {
+    text-align: center;
+    padding-bottom: 15px;
+ }
+ 
+ .sidebar ul {
+    list-style: none;
+    padding: 0;
+ }
+ 
+ .sidebar ul li {
+    margin: 15px 0;
+ }
+ 
+ .sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+ }
+ 
+ .sidebar ul li a:hover {
+    background-color: #1a6c8d;
+ }
+ 
+ /* Contenido del justificante */
+ .container2 {
+    margin-left: 280px; /* Ajustado para el ancho del sidebar */
+    padding: 40px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+ }
+ 
+ .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+ }
+ 
+ .doctor-info h1 {
+    font-size: 1.5rem;
+ }
+ 
+ .patient-info p {
+    font-size: 1rem;
+    line-height: 1.5;
+ }
+ 
+ 
+ .location-date {
+    margin-bottom: 20px;
+ }
+ 
+ .content p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+ }
+ 
+ .signature {
+    text-align: center;
+    margin-top: 40px;
+ }
+ 
+ .signature p {
+    font-size: 1.2rem;
+    font-weight: bold;
+ }
+ 
+ /* Botones */
+ .btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+ }
+ 
+ .btn-primary {
+    background-color: #0066cc;
+    color: white;
+ }
+ 
+ .btn-primary:hover {
+    background-color: #004d99;
+ }
+ 
+ /* Pie de página */
+ .pie-pagina {
+    background-color: #3693f0;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%; /* Ocupa el ancho total del contenido */
+    margin-left: 260px; /* Para alinearse con el contenido principal */
+    position: fixed;
+    bottom: 0;
+    height: 40px; /* Altura ajustada */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+ }
+ 
+ /* Ajustes para la cabecera */
+ .cabecera {
+    background-color: rgb(34, 175, 255);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;
+    z-index: 1000;
+ }
+ 
+ .cabecera h1 {
+    margin: 0;
+ }
+ 
+ .header {
+    background: url(logo.jpeg) no-repeat left center;
+    background-size: 150px auto; /* Ajusta este valor para cambiar el tamaño de la imagen */
+    width: 100%;
+    height: 200px;
+    text-align: right;
+    padding-top: 30px;
+    padding-left: 220px; /* Ajusta este valor si cambias el tamaño de la imagen */
+}

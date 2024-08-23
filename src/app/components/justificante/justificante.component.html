@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justificante Médico</title>
+    <link rel="stylesheet" href="justificante.component.css">
+</head>
+<body>
+    <header class="cabecera">
+        <h1>SaludUTNG</h1>
+        </header>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>Menú</h1>
+            </div>
+            <ul>
+                <li><a href="/alumnos"><i class="fas fa-file-alt"></i>Alumno</a></li>
+                <li><a href="/diagnosticos"><i class="fas fa-notes-medical"></i> Diagnóstico</a></li>
+                <li><a href="/usuarios"><i class="fa-solid fa-arrow-rotate-left"></i>Regristrarse</a></li>
+            </ul>
+        </div>
+
+        <div class="container2">
+            <div class="header">
+                <div class="header-logo">
+
+                </div>
+                <div class="doctor-info">
+                    <h2>JUSTIFICANTE MEDICO</h2><br>
+                 <label><input type="number" class="form-control" placeholder="Folio" name="folio"
+                    [(ngModel)]="justificanteService.justificante.folio"></label>
+                    <h2>Dr. Encargado de atender la solicitud</h2><br>
+                    <p>Dr(a): <input type="text" name="responsable" size="20"><br></p>
+                </div>
+            </div><br>
+            <div class="patient-info">
+                <p><strong>NOMBRE DEL PACIENTE: </strong> <br><input type="text" name="nombre-paciente" size="50"><br>
+                <strong>NO.CONTROL DEL PACIENTE: </strong> <br><input type="text" name="numcontrol" size="10"><br>
+                <label>EDAD:<input type="number" class="form-control" placeholder="Edad" name="edad"
+                    [(ngModel)]="justificanteService.justificante.edad" size="2"></label> <br>
+                <br><label>SEXO: <select type="text" class="form-control" placeholder="Sexo" name="sexo"
+                    [(ngModel)]="justificanteService.justificante.sexo">
+                        <option value="F">F</option>
+                        <option value="M">M</option>
+                    </select></label> 
+                </p>
+            </div>
+            <div class="location-date">
+                <label for="fecha">Fecha</label><br>
+                <input type="date" id="fecha">
+            </div><br>
+            <div class="content">
+                <p>A quien corresponda.</p>
+                <p>Por medio de la presente se hace contar que:</p>
+                <p>El(la) paciente <input type="text" name="patient-name" size="50"> no se encuentra 
+                en capacidad de realizar sus actividades laborales debido a:</p>
+                <p><input type="text" class="form-control" placeholder="justificantee" name="justificantee"
+                    [(ngModel)]="justificanteService.justificante.justificantee" size="110"><br> que le requiere reposo por un
+                periodo de <input type="number" name="rest-days" size="2"> días, iniciando el día <input type="date" id="fecha-i"> y terminando el día 
+                <input type="date" id="fecha-t" >. Hacemos petición de tomar en cuenta este documento por 
+                válido para justificar las faltas durante el periodo antes mencionado.</p>
+                <p>Sírvanse el interesado hacer uso del presente para justificar su falta por enfermedad</p>
+            </div><br>
+            <div class="signature">
+                <p>___________________________<br>
+                        Firma del médico </p>
+            </div>
+           <div>
+                <button type="submit" class="btn btn-primary">Enviar</button><br>
+            </div>
+        </div><br>
+    </div>
+    <footer class="pie-pagina">
+        <p>&copy; 2024 SaludUTNG. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

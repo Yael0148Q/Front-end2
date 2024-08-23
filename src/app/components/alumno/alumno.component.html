@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaludUTNG</title>
+    <link rel="stylesheet" href="alumno.component.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+
+</head>
+
+<body>
+    <header class="cabecera">
+        <h1>SaludUTNG</h1>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>Menú</h1>
+            </div>
+            <ul>
+                <li><a href="/justificantes"><i class="fas fa-file-alt"></i> Justificante</a></li>
+                <li><a href="/diagnosticos"><i class="fas fa-notes-medical"></i> Diagnóstico</a></li>
+                <li><a href="/usuarios"><i class="fa-solid fa-arrow-rotate-left"></i>Regresar</a></li>
+            </ul>
+        </div>
+
+        <main>
+            <h2>Datos del Alumno</h2><br>
+            <form #alumnoForm="ngForm" (ngSubmit)="createAlumno(alumnoForm)">
+                <input type="hidden" name="numcontrol" [(ngModel)]="alumnoService.alumno.numcontrol">
+
+                <div class="grupo-formulario">
+                    <label for="nombre"><i class="fas fa-user"></i> Num. Control</label>
+                    <input type="" class="form-control" placeholder="Num. Control" name="numcontrol"
+                        [(ngModel)]="alumnoService.alumno.numcontrol">
+
+                    <div class="grupo-formulario">
+                        <label for="nombre"><i class="fas fa-user"></i> Nombre</label>
+                        <input type="text" class="form-control" placeholder="Nombre" name="nombre"
+                            [(ngModel)]="alumnoService.alumno.nombre">
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="primerApellido"><i class="fas fa-user"></i> Apellido Paterno</label>
+                        <input type="text" class="form-control" placeholder="Apellido Paterno" name="apellidop"
+                            [(ngModel)]="alumnoService.alumno.apellidop">
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="segundoApellido"><i class="fas fa-user"></i> Apellido Materno</label>
+                        <input type="text" class="form-control" placeholder="Apellido Materno" name="apellidom"
+                            [(ngModel)]="alumnoService.alumno.apellidom">
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="grupo"><i class="fas fa-users"></i> Selecciona tu grupo</label>
+                        <select type="text" class="form-control" placeholder="Grupo" name="grupo"
+                            [(ngModel)]="alumnoService.alumno.grupo">>
+                            <option value="GDS0633">GDS0633</option>
+                            <option value="GDS0631">GDS0631</option>
+                            <option value="GDS0632">GDS0632</option>
+                            <option value="GDS0634">GDS0634</option>
+                            <option value="GEVN0331">GEVN0331</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="carrera"><i class="fas fa-graduation-cap"></i> Carrera</label>
+                        <select type="text" class="form-control" placeholder="Carrera" name="carrera"
+                            [(ngModel)]="alumnoService.alumno.carrera">
+                            <option value="Entornos Virtuales y Negocios Digitales">Entornos Virtuales y Negocios
+                                Digitales</option>
+                            <option value="Desarrollo de Software Multiplataforma">Desarrollo de Software
+                                Multiplataforma</option>
+                            <option value="Diseño Digital">Diseño Digital</option>
+                            <option value="Infraestructura de Redes">Infraestructura de Redes</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="telefonoMovil"><i class="fas fa-phone"></i> Número de Celular</label>
+                        <input type="text" class="form-control" placeholder="Num. Celular" name="numcelular"
+                            [(ngModel)]="alumnoService.alumno.numcelular">
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="telefonoMovil"><i class="fas fa-phone"></i>Coreo Electronico</label>
+                        <input type="text" class="form-control" placeholder="Coreo Electronico" name="correoe"
+                            [(ngModel)]="alumnoService.alumno.correoe">
+                    </div>
+
+
+                    <div class="grupo-formulario">
+                        <button routerLink="/justificantes" type="submit" class="btn btn-primario"><i
+                                class="fas fa-paper-plane"></i> Enviar</button>
+                        <button type="reset" class="btn btn-danger"><i class="fas fa-eraser"></i> Borrar</button>
+                        <button class="btn btn-secondary m-2" (click)="updateAlumno(alumnoForm)">Actualizar
+                            Registro</button>
+                    </div>
+                </div><br>
+            </form><br>
+
+            <h2>Registro del Alumno</h2><br>
+            <div class="col-md-8">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Num. Control</th>
+                            <th>Nombre</th>
+                            <th>Apellido Paterno</th>
+                            <th>Apellido Materno</th>
+                            <th>Grupo</th>
+                            <th>Carrera</th>
+                            <th>Num. Celular</th>
+                            <th>Correo Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of alumnoService.alumnos">
+                            <td>{{item.numcontrol}}</td>
+                            <td>{{item.nombre}}</td>
+                            <td>{{item.apellidop}}</td>
+                            <td>{{item.apellidom}}</td>
+                            <td>{{item.grupo}}</td>
+                            <td>{{item.carrera}}</td>
+                            <td>{{item.numcelular}}</td>
+                            <td>{{item.correoe}}</td>
+                            <td>
+                                <button class="btn btn-secondary btn-sm" (click)="editAlumno(item)">
+                                    <i class="material-icons">edit</i>
+                                </button>
+                                <button class="btn btn-danger btn-sm" (click)="deleteAlumno(item.numcontrol)">
+                                    <i class="material-icons">delete</i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <footer class="pie-pagina">
+        <p>&copy; 2024 SaludUTNG. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>

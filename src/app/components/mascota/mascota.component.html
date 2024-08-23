@@ -1,0 +1,104 @@
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <form #mascotaForm="ngForm" (ngSubmit)="createMascota(mascotaForm)">
+                    <input type="hidden" name="id" 
+                    [(ngModel)]="mascotaService.mascota.id"
+                    >
+                    <div class="form-group">
+                        <input 
+                        type="text"
+                        class="form-control"
+                        placeholder="Tipo"
+                        name="tipo"
+                        [(ngModel)]="mascotaService.mascota.tipo"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <input 
+                        type="text"
+                        class="form-control"
+                        placeholder="Raza"
+                        name="raza"
+                        [(ngModel)]="mascotaService.mascota.raza"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <input 
+                        type="text"
+                        class="form-control"
+                        placeholder="Alimentación"
+                        name="alimentacion"
+                        [(ngModel)]="mascotaService.mascota.alimentacion"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <input 
+                        type="text"
+                        class="form-control"
+                        placeholder="Vacunas"
+                        name="vacunas"
+                        [(ngModel)]="mascotaService.mascota.vacunas"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <input 
+                        type="number"
+                        class="form-control"
+                        placeholder="Edad"
+                        name="edad"
+                        [(ngModel)]="mascotaService.mascota.edad"
+                        >
+                    </div>
+                <div class="form-group">
+                    <input 
+                    type="number"
+                    class="form-control"
+                    placeholder="Precio"
+                    name="precio"
+                    [(ngModel)]="mascotaService.mascota.precio"
+                    >
+                </div>
+                    <button class="btn btn-secondary m-2" (click)="formReset(mascotaForm)">Limpiar</button>
+                    <button class="btn btn-primary m-2">Guardar</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>tipo</th>
+                    <th>raza</th>
+                    <th>alimentacion</th>
+                    <th>vacunas</th>
+                    <th>edad</th>
+                    <th>precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of mascotaService.mascotas">
+                    <td>{{item.id}}</td>
+                    <td>{{item.tipo}}</td>
+                    <td>{{item.raza}}</td>
+                    <td>{{item.alimentacion}}</td>
+                    <td>{{item.vacunas}}</td>
+                    <td>{{item.edad}}</td>
+                    <td>{{item.precio}}</td>
+                    <td>
+                        <button class="btn btn-secondary btn-sm" (click)="editMascota(item)">
+                            <i class="material-icons">edit</i>
+                        </button>
+                        <button class="btn btn-danger btn-sm" (click)="deleteMascota(item.id)">
+                            <i class="material-icons">delete</i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

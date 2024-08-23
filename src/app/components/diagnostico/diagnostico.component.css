@@ -1,0 +1,187 @@
+/* Estilos generales */
+body {
+   font-family: 'Arial', sans-serif;
+   margin: 0;
+   padding: 0;
+   color: #333;
+   min-height: 100vh;
+    background: url(16352150_v870-tang-35.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+h1 {
+   color: #fafdff;
+}
+
+h2 {
+   color: #1a1a1a;
+}
+
+.container {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   padding: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+   background-color: #34bbed;
+   width: 260px; /* Ancho aumentado */
+   padding: 20px;
+   position: fixed;
+   top: 0;
+   bottom: 0px; /* Para dejar espacio al pie de página */
+   left: 0;
+   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+   z-index: 1000; /* Para asegurar que esté siempre visible */
+}
+
+.sidebar-header {
+   text-align: center;
+   padding-bottom: 15px;
+}
+
+.sidebar ul {
+   list-style: none;
+   padding: 0;
+}
+
+.sidebar ul li {
+   margin: 15px 0;
+}
+
+.sidebar ul li a {
+   text-decoration: none;
+   color: white;
+   display: block;
+   padding: 10px 20px;
+   border-radius: 4px;
+   transition: background-color 0.3s ease;
+}
+
+/* Contenido principal */
+.informe-medico {
+   margin-left: 260px; /* Ajustado para el nuevo ancho del sidebar */
+   padding: 20px;
+   width: calc(100% - 260px);
+   background-color: white;
+   border-radius: 8px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   flex: 1; /* Para que el contenido crezca ocupando el espacio vertical */
+}
+
+.form-group {
+   margin-bottom: 15px;
+}
+
+.form-control {
+   width: 100%;
+   padding: 10px;
+   border-radius: 5px;
+   border: 1px solid #ccc;
+   transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+   border-color: #0066cc;
+   outline: none;
+   box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
+}
+
+.firma {
+   text-align: center;
+   border: 2px dashed #ccc;
+   padding: 20px;
+   margin: 20px 0;
+}
+
+/* Botones */
+.btn {
+   padding: 10px 15px;
+   border: none;
+   border-radius: 5px;
+   font-size: 16px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+.btn-success {
+   background-color: #0066cc;
+   color: white;
+}
+
+.btn-success:hover {
+   background-color: #004d99;
+}
+
+.btn-danger {
+   background-color: #fa3030c2;
+   color: white;
+   margin-left: 20px;
+}
+
+.btn-danger:hover {
+   background-color: #990000;
+}
+
+/* Tablas */
+.table {
+   width: 100%;
+   margin-top: 20px;
+   border-collapse: collapse;
+}
+
+.table th, .table td {
+   padding: 12px 15px;
+   text-align: left;
+   border-bottom: 1px solid #ddd;
+}
+
+.table th {
+   background-color: #0066cc;
+   color: white;
+}
+
+.table-striped tbody tr:nth-child(even) {
+   background-color: #f0f8ff;
+}
+
+/* Pie de página */
+.pie-pagina {
+   background-color: #3693f0;
+   color: white;
+   text-align: center;
+   padding: 0px;
+   width: calc(100% - 260px); /* Ocupa el ancho total del contenido */
+   margin-left: 260px; /* Para alinearse con el contenido principal */
+   position: fixed;
+   bottom: 0;
+   height: 40px; /* Altura ajustada */
+   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cabecera {
+   background-color: rgb(34, 175, 255);
+   color: white;
+   padding: 10px 20px;
+   text-align: center;
+   width: 100%;
+   z-index: 1000; /* Asegura que esté sobre el contenido */
+}
+
+.cabecera h1 {
+   margin: 0;
+}
+
+.header-logo {
+   background: url(logo.jpeg) no-repeat left center;
+   background-size: 150px auto; /* Ajusta este valor para cambiar el tamaño de la imagen */
+   width: 100%;
+   height: 200px;
+   text-align: right;
+   padding-top: 30px;
+   padding-left: 220px; /* Ajusta este valor si cambias el tamaño de la imagen */
+}
+
